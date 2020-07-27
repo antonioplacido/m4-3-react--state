@@ -1,12 +1,23 @@
-import React from 'react';
+import React from "react";
 
-import GlobalStyles from './GlobalStyles';
+import data from "../data";
+
+import GlobalStyles from "./GlobalStyles";
+import Typeahead from "./Typeahead";
 
 const App = (props) => {
   return (
     <>
       <GlobalStyles />
       {/* TODO */}
+      <Wrapper>
+        <Typeahead
+          suggestions={data.books} ///assigning props to Typeahead
+          handleSelect={(suggestion) => {
+            window.alert(suggestion);
+          }}
+        />
+      </Wrapper>
     </>
   );
 };
